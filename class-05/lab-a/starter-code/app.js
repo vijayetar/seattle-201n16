@@ -11,8 +11,8 @@ Test this function by hand in the console to get it working, and when you think 
 function sum(a, b) { //eslint-disable-line
   var addition = a + b;
   var sentence = ('The sum of ' + a + ' and ' + b + ' is ' + addition + '.');
-  var wholeSentence = [addition, sentence];
-  return wholeSentence;
+  var arrayOne = [addition, sentence];
+  return arrayOne;
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -32,8 +32,8 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   var multiplication = a * b;
   var sentence = ('The product of ' + a + ' and ' + b + ' is ' + multiplication + '.');
-  var multiplySent = [multiplication, sentence];
-  return multiplySent;
+  var arrayTwo = [multiplication, sentence];
+  return arrayTwo;
 
 }
 
@@ -71,9 +71,9 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   console.log(sentOne);
   var sentTwo = ('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product2 + '.');
   console.log(sentTwo);
-  var arrayFour = [ add2, product2, sentOne, sentTwo];
-  console.log(arrayFour);
-  return arrayFour;
+  var arrayThree = [ add2, product2, sentOne, sentTwo];
+  console.log(arrayThree);
+  return arrayThree;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -111,9 +111,9 @@ function sumArray(sumArr) { //eslint-disable-line
   
   var sentence = (numbers + ' was passed in as an array of numbers, and ' + add + ' is their sum.');
   console.log(sentence);
-  var arrayFive = [add, sentence];
-  console.log(arrayFive);
-  return arrayFive;
+  var arrayFour = [add, sentence];
+  console.log(arrayFour);
+  return arrayFour;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -134,11 +134,31 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var mult = 1;
+  var numbers = '';
+  for (var i = 0; i < multArr.length; i++) {
+    mult = multiply(mult,multArr[i]);
+    mult = mult[0];
+    console.log(mult);
+      if (i === (multArr.length - 1)) {
+        var numbers = numbers + multArr[i];
+      }
+      else {
+        var numbers = numbers + multArr[i] + ',';
+      }  
+    console.log(numbers);
+  }
+  
+  var sentence = ('The numbers ' + numbers + ' have a product of ' + mult + '.');
+  console.log(sentence);
+  var arrayFive = [mult, sentence];
+  console.log(arrayFive);
+  return arrayFive;
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
