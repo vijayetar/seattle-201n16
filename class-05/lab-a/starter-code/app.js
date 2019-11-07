@@ -32,8 +32,8 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   var multiplication = a * b;
   var sentence = ('The product of ' + a + ' and ' + b + ' is ' + multiplication + '.');
-  var wholeSentence = [multiplication, sentence];
-  return wholeSentence;
+  var multiplySent = [multiplication, sentence];
+  return multiplySent;
 
 }
 
@@ -55,11 +55,29 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var firstSum = sum(a,b);
+  var add = firstSum[0];
+  var secondSum = sum(add,c);
+  var add2 = secondSum[0];
+  console.log(add2);
 
+  var firstProduct = multiply(a,b);
+  var product = firstProduct[0];
+  var secondProduct = multiply(product,c);
+  var product2 = secondProduct[0];
+  console.log(product2);
+
+  var sentOne = (a + ' and ' + b + ' and ' + c + " sum to " + add2 + '.');
+  console.log(sentOne);
+  var sentTwo = ('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product2 + '.');
+  console.log(sentTwo);
+  var arrayFour = [ add2, product2, sentOne, sentTwo];
+  console.log(arrayFour);
+  return arrayFour;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
